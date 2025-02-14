@@ -60,8 +60,8 @@ const BetSection: NextPage<Props> = ({}) => {
         <div className='BetSection-HeroCard'>
           <BetHeroCard
             setActiveTab={setActiveTab}
-            categoryIndex={0}
-            category='Crypto'
+            categoryIndex={1}
+            category='Crypto Market'
             categoryLogo={CRYPTO_LOGO}
             categoryName='Bitcoin to $200k'
             cardBgColor='linear-gradient(67.58deg,rgb(255, 176, 59) -0.96%,rgb(170, 119, 0) 78.06%)'
