@@ -1,0 +1,179 @@
+@import "../../app/mixin.scss";
+
+.BetSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .BetSection-Hero {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.2s ease-in;
+
+    @include md {}
+
+    @include lg {
+      flex-direction: row;
+    }
+
+    @include xl {
+      flex-direction: row;
+    }
+
+    @include xxl {
+      flex-direction: row;
+    }
+
+    .BetSection-HeroCard {
+      width: 100%;
+      height: auto;
+
+      @include md {}
+
+      @include lg {}
+
+      @include xl {}
+
+      @include xxl {
+        width: 50%;
+        height: 250px;
+      }
+    }
+  }
+
+  .BetSection-CardWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+    transition: all 0.2s ease-in-out;
+
+    .Tabs-Section {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 20px;
+      overflow-x: scroll;
+
+      @include md {}
+
+      @include lg {}
+
+      @include xl {}
+
+      @include xxl {
+        gap: 50px;
+      }
+
+      .Tab {
+        flex: 0 0 auto;
+        padding: 8px 20px;
+        font-family: "GilmerMedium";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 24px;
+        background: linear-gradient(270deg, #faf9f9 0%, #d7d7d7 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        cursor: pointer;
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      .Tab-Active {
+        flex: 0 0 auto;
+        padding: 8px 20px;
+        box-sizing: border-box;
+        background: linear-gradient(90deg,
+            #f5841f 0%,
+            #ed801e 25%,
+            #e57b1d 50%,
+            #d5731b 75%,
+            #c66b19 100%);
+        border-radius: 10px;
+        font-family: "GilmerMedium";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        line-height: 24px;
+        width: fit-content;
+        color: white;
+        cursor: pointer;
+        animation: fadeIn 0.2s ease-in-out forwards;
+
+      }
+    }
+
+    .BetCard-Wrapper {
+      width: 100%;
+      height: auto;
+      flex-wrap: wrap;
+      display: flex;
+      padding-bottom: 60px;
+      flex-direction: row;
+      gap: 20px;
+
+      @include md {}
+
+      @include lg {}
+
+      @include xl {
+      }
+
+      @include xxl {}
+
+      .BetCard-Container {
+        width: 100%;
+
+        @include md {
+          width: 350px;
+        }
+
+        @include lg {}
+
+        @include xl {
+          width: 350px;
+        }
+
+        @include xxl {
+          width: 400px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

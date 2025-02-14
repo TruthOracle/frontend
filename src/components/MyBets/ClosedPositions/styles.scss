@@ -1,0 +1,99 @@
+.ClosedPositions {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-inline: auto;
+  .Heading {
+    font-size: 32px;
+    margin-left: 20px;
+    text-align: start;
+  }
+  .Container {
+    width: 100%;
+    padding-inline: 30px;
+    padding-block: 24px;
+    margin-block: 40px;
+    border-radius: 16px;
+    background-color: #17171b;
+    padding-inline: 40px;
+    .Headings {
+      display: flex;
+      font-size: 14px;
+      width: 100%;
+      justify-content: space-between;
+      color: #818181;
+      .Status {
+        width: 60px;
+        text-align: left;
+      }
+      .Event {
+        width: 250px;
+        text-align: left;
+      }
+      .DatePlaced {
+        width: 250px;
+        text-align: left;
+      }
+      .StakedAmount {
+        width: 120px;
+        text-align: center;
+      }
+      .Prediction {
+        width: 80px;
+        text-align: center;
+      }
+    }
+    .Data {
+      display: flex;
+      font-size: 20px;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      .BetToken {
+        display: flex;
+        align-items: center;
+        img {
+          margin-right: 8px;
+        }
+      }
+      .Yes {
+        color: #3dd179;
+      }
+      .Status {
+        width: 60px;
+        text-align: left;
+      }
+      .Claim {
+        background-color: #d5741c;
+        padding-inline: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-block: 8px;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+      .Event {
+        width: 250px;
+        text-align: left;
+      }
+      .DatePlaced {
+        width: 250px;
+        text-align: left;
+      }
+      .StakedAmount {
+        width: 120px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .Prediction {
+        width: 80px;
+        text-align: center;
+      }
+    }
+  }
+}

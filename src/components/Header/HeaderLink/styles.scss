@@ -1,0 +1,51 @@
+@import "../../../app/mixin.scss";
+
+.HeaderLink {
+    padding: 8px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #F5841F;
+    border-radius: 10px;
+    color: #F5AD6C;
+    font-size: 14px;
+    font-family: "GilmerRegular";
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    .HeaderLink-Logo {
+        width: 15px;
+        height: 15px;
+        margin-bottom: 3px;
+    }
+}
+
+.HeaderLink-White {
+    padding: 8px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #c6c6c6;
+    border-radius: 10px;
+    color: #c6c6c6;
+    font-size: 14px;
+    font-family: "GilmerRegular";
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    .HeaderLink-Logo {
+        width: 12px;
+        height: 12px;
+        margin-bottom: 3px;
+    }
+}

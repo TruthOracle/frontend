@@ -1,0 +1,206 @@
+@import "../../../app/mixin.scss";
+
+.BetCard {
+    width: 100%;
+    height: 100%;
+    background-color: #161617;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .BetCard-HeadingContainer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .BetCard-CategoryContainer {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .CategoryLogo {
+                width: 20px;
+                height: 20px;
+            }
+
+            .CategoryName {
+                font-family: 'GilmerRegular';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 24px;
+                color: #909090;
+
+                @include md {}
+
+                @include lg {}
+
+                @include xl {
+                    font-size: 13px;
+                }
+
+                @include xxl {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .Bet-Duration {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-family: 'GilmerRegular';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 17px;
+            background: linear-gradient(90deg, #FCFCFB 0%, #E6E5E5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+
+            .DurationIcon {
+                width: 10px;
+                height: 10px;
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    .BetCard-DetailsWrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .Heading {
+            font-family: 'GilmerBold';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            background: linear-gradient(90deg, #FCFCFB 0%, #E6E5E5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+
+            @include md {}
+
+            @include lg {}
+
+            @include xl {
+                font-size: 22px;
+            }
+
+            @include xxl {
+                font-size: 24px;
+            }
+        }
+
+        .Sub-Heading {
+            font-family: 'GilmerRegular';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 24px;
+            background: linear-gradient(90deg, #FCFCFB 0%, #E6E5E5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+
+            @include md {}
+
+            @include lg {}
+
+            @include xl {
+                font-size: 13px;
+            }
+
+            @include xxl {
+                font-size: 14px;
+            }
+
+        }
+    }
+
+    .BetCard-OptionsContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .BetCard-Option {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1F1F24;
+            border-radius: 10px;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            .Green-Text {
+                font-family: 'GilmerMedium';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 24px;
+                color: #3DD179;
+            }
+
+            .Bet-Stat {
+                font-family: 'GilmerRegular';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 24px;
+                color: #D9D9D9;
+            }
+
+            .Red-Text {
+                font-family: 'GilmerMedium';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 24px;
+                color: #DD7168;
+            }
+        }
+    }
+
+    .Pool-Stats {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        font-family: 'GilmerRegular';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 24px;
+        background: linear-gradient(90deg, #FCFCFB 0%, #E6E5E5 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+
+        .Pool-Value {
+            font-family: 'GilmerMedium';
+        }
+
+        .Starknet-logo {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}

@@ -1,0 +1,87 @@
+@import "../app/mixin.scss";
+
+.Home {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1300px;
+    height: auto;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    gap: 40px;
+    box-sizing: border-box;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+
+    @include md {
+        // height: 100%;
+    }
+
+    @include lg {}
+
+    @include xl {
+        justify-content: center;
+    }
+
+    @include xxl {}
+
+    .Heading-Section {
+        display: flex;
+        flex-direction: column;
+
+
+        @include md {}
+
+        @include lg {}
+
+        @include xl {}
+
+        @include xxl {}
+
+        .Heading {
+            font-family: 'GilmerBold';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            background: linear-gradient(270deg, #FAF9F9 0%, #CDCDCC 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+
+            @include md {}
+
+            @include lg {}
+
+            @include xl {}
+
+            @include xxl {
+                font-size: 52px;
+            }
+        }
+
+        .Sub-Heading {
+            font-family: 'GilmerRegular';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            background: linear-gradient(270deg, rgba(250, 249, 249, 0.8) 0%, rgba(205, 205, 204, 0.8) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+
+            @include md {}
+
+            @include lg {}
+
+            @include xl {}
+
+            @include xxl {
+                font-size: 18px;
+                line-height: 34px;
+            }
+        }
+    }
+}

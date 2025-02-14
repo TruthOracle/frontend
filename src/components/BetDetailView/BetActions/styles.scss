@@ -1,0 +1,762 @@
+@import "../../../app/mixin.scss";
+
+.BetActions {
+    width: 80%;
+    background-color: #17171B;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+
+    @include md {
+        gap: 20px;
+        width: 500px;
+    }
+
+    @include lg {}
+
+    @include xl {
+        gap: 15px;
+        width: 400px;
+    }
+
+    @include xxl {
+        gap: 20px;
+        width: 500px;
+    }
+
+    .BetActions-Label {
+        font-family: 'GilmerRegular';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 11px;
+        color: #FFFFFF;
+
+
+
+        @include md {
+            font-size: 12px;
+        }
+
+        @include lg {}
+
+        @include xl {
+            font-size: 12px;
+        }
+
+        @include xxl {
+            font-size: 14px;
+        }
+    }
+
+    .BetOptionsContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .BetOptionsLabel {
+            font-family: 'GilmerRegular';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 10px;
+            color: #818181;
+
+
+
+            @include md {
+                font-size: 11px;
+            }
+
+            @include lg {}
+
+            @include xl {
+                font-size: 11px;
+            }
+
+            @include xxl {
+                font-size: 12px;
+            }
+        }
+
+        .BetOption {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #1F1F24;
+            cursor: pointer;
+
+
+
+            @include md {
+                padding: 12px 18px;
+            }
+
+            @include lg {}
+
+            @include xl {}
+
+            @include xxl {
+                padding: 15px 20px;
+            }
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            .Green {
+                font-family: 'GilmerRegular';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 12px;
+                color: #3DD179;
+
+
+                @include md {
+                    font-size: 13px;
+                }
+
+                @include lg {}
+
+                @include xl {
+                    font-size: 13px;
+                }
+
+                @include xxl {
+                    font-size: 14px;
+                }
+            }
+
+            .Red {
+                font-family: 'GilmerRegular';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 12px;
+                color: #DD7168;
+
+
+                @include md {
+                    font-size: 13px;
+                }
+
+                @include lg {}
+
+                @include xl {}
+
+                @include xxl {
+                    font-size: 14px;
+                }
+            }
+
+            .RadioButtonContainer {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                .RadioLabel {
+                    font-family: 'GilmerRegular';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 12px;
+                    line-height: 24px;
+                    color: #D9D9D9;
+
+
+                    @include md {
+                        font-size: 13px;
+                    }
+
+                    @include lg {}
+
+                    @include xl {}
+
+                    @include xxl {
+                        font-size: 14px;
+                    }
+                }
+
+                .RadioButton {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    border: 1px solid #6E6E6E;
+                    padding: 1px;
+                    box-sizing: border-box;
+
+                    @include md {}
+
+                    @include lg {}
+
+                    @include xl {}
+
+                    @include xxl {
+                        width: 12px;
+                        height: 12px;
+                    }
+
+                    .RadioButtonInner {
+                        width: 100%;
+                        height: 100%;
+                        background-color: #6E6E6E;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+
+        .BetOptionActive {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #1F1F24;
+            border: 1px solid #F5841F;
+            cursor: pointer;
+
+
+            @include md {
+                padding: 12px 18px;
+            }
+
+            @include lg {}
+
+            @include xl {}
+
+            @include xxl {
+                padding: 15px 20px;
+            }
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            .Green {
+                font-family: 'GilmerRegular';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 12px;
+                color: #3DD179;
+
+
+                @include md {
+                    font-size: 13px;
+                }
+
+                @include lg {}
+
+                @include xl {}
+
+                @include xxl {
+                    font-size: 14px;
+                }
+            }
+
+            .Red {
+                font-family: 'GilmerRegular';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 12px;
+                color: #DD7168;
+
+
+                @include md {
+                    font-size: 13px;
+                }
+
+                @include lg {}
+
+                @include xl {}
+
+                @include xxl {
+                    font-size: 14px;
+                }
+            }
+
+            .RadioButtonContainer {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                .RadioLabel {
+                    font-family: 'GilmerRegular';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 12px;
+                    line-height: 24px;
+                    color: #D9D9D9;
+
+
+                    @include md {
+                        font-size: 13px;
+                    }
+
+                    @include lg {}
+
+                    @include xl {}
+
+                    @include xxl {
+                        font-size: 14px;
+                    }
+
+                }
+
+                .RadioButton {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    border: 1px solid #F5841F;
+                    padding: 1px;
+                    box-sizing: border-box;
+
+
+                    @include md {}
+
+                    @include lg {}
+
+                    @include xl {}
+
+                    @include xxl {
+                        width: 12px;
+                        height: 12px;
+                    }
+
+                    .RadioButtonInner {
+                        width: 100%;
+                        height: 100%;
+                        background-color: #F5841F;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+
+    .InputContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .Label {
+            font-family: 'GilmerRegular';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 10px;
+            color: #818181;
+
+
+
+            @include md {
+                font-size: 11px;
+            }
+
+            @include lg {}
+
+            @include xl {}
+
+            @include xxl {
+                font-size: 12px;
+            }
+        }
+
+        .InputWrapper {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 10px;
+            background-color: #28282E;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+
+
+            @include md {
+                padding: 12px 18px;
+            }
+
+            @include lg {}
+
+            @include xl {}
+
+            @include xxl {
+                padding: 15px 20px;
+            }
+
+            .Starknet-logo {
+                width: 20px;
+                height: 20px;
+
+                @include md {}
+
+                @include lg {}
+
+                @include xl {}
+
+                @include xxl {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            .InputField {
+                font-family: 'GilmerMedium';
+                background-color: transparent;
+                outline: none;
+                border: none;
+                color: #FFF;
+                font-size: 12px;
+
+                @include md {
+                    font-size: 13px;
+                }
+
+                @include lg {}
+
+                @include xl {}
+
+                @include xxl {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .ReturnStats {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .ReturnLabel {
+            font-family: 'GilmerMedium';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 24px;
+            color: #FFFFFF;
+
+
+            @include md {
+                font-size: 15px;
+            }
+
+            @include lg {}
+
+            @include xl {}
+
+            @include xxl {
+                font-size: 16px;
+            }
+        }
+
+        .ReturnValue {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .Green {
+                font-family: 'GilmerMedium';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 15px;
+                line-height: 34px;
+                text-align: right;
+                color: #00FF67;
+
+
+                @include md {
+                    font-size: 16px;
+                }
+
+                @include lg {}
+
+                @include xl {}
+
+                @include xxl {
+                    font-size: 17px;
+                }
+            }
+
+            .Starknet-logo {
+                width: 20px;
+                height: 20px;
+
+
+                @include md {}
+
+                @include lg {}
+
+                @include xl {}
+
+                @include xxl {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+        }
+    }
+
+    .ActionBtn {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        background: linear-gradient(90deg, #F5841F 0%, #ED801E 25%, #E57B1D 50%, #D5731B 75%, #C66B19 100%);
+        border-radius: 8px;
+        font-family: 'GilmerMedium';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 14px;
+        // margin-bottom: 20px;
+        line-height: 24px;
+        color: #FFFFFF;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        @include md {
+            padding: 12px;
+        }
+
+        @include lg {}
+
+        @include xl {
+            padding: 10px;
+        }
+
+        @include xxl {
+            padding: 15px;
+        }
+
+        &:hover {
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        .RadioButton {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 1px solid #6e6e6e;
+            padding: 1px;
+            box-sizing: border-box;
+
+            .RadioButtonInner {
+                width: 100%;
+                height: 100%;
+                background-color: #6e6e6e;
+                border-radius: 50%;
+            }
+        }
+    }
+    .BetPlaced {
+        pointer-events: none;
+    }
+}
+
+.BetOptionActive {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1f1f24;
+    border: 1px solid #f5841f;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    .Green {
+        font-family: "GilmerRegular";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        color: #3dd179;
+    }
+
+    .Red {
+        font-family: "GilmerRegular";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        color: #dd7168;
+    }
+
+    .RadioButtonContainer {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .RadioLabel {
+            font-family: "GilmerRegular";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 24px;
+            color: #d9d9d9;
+        }
+
+        .RadioButton {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 1px solid #f5841f;
+            padding: 1px;
+            box-sizing: border-box;
+
+            .RadioButtonInner {
+                width: 100%;
+                height: 100%;
+                background-color: #f5841f;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+.InputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .Label {
+        font-family: "GilmerRegular";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        color: #818181;
+    }
+
+    .InputWrapper {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 15px 20px;
+        border-radius: 10px;
+        background-color: #28282e;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: space-between;
+
+        .Input-Left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .Starknet-logo {
+            width: 20px;
+            height: 20px;
+        }
+
+        .InputField {
+            font-family: "GilmerMedium";
+            background-color: transparent;
+            outline: none;
+            border: none;
+            color: #fff;
+            font-size: 14px;
+        }
+    }
+}
+
+.ReturnStats {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .ReturnLabel {
+        font-family: "GilmerMedium";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        color: #ffffff;
+    }
+
+    .ReturnValue {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .Gray {
+            font-family: "GilmerMedium";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 34px;
+            text-align: right;
+            color: #818181;
+        }
+
+        .Green {
+            font-family: "GilmerMedium";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 34px;
+            text-align: right;
+            color: #00ff67;
+        }
+
+        .Starknet-logo {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+.ActionBtn {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background: linear-gradient(90deg,
+            #f5841f 0%,
+            #ed801e 25%,
+            #e57b1d 50%,
+            #d5731b 75%,
+            #c66b19 100%);
+    border-radius: 8px;
+    font-family: "GilmerMedium";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 24px;
+    color: #ffffff;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remove the spinner in Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}

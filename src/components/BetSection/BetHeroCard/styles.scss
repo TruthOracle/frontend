@@ -1,0 +1,211 @@
+ @import "../../../app/mixin.scss";
+
+ .BetHeroCard {
+     width: 100%;
+     height: 100%;
+     border-radius: 16px;
+     background: linear-gradient(67.58deg, #ffb03b -0.96%, #aa7700 78.06%);
+     padding: 15px 20px;
+     box-sizing: border-box;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     position: relative;
+     overflow: hidden;
+
+     @include md {}
+
+     @include lg {}
+
+     @include xl {
+         padding: 20px 25px;
+     }
+
+     @include xxl {
+         padding: 25px 30px;
+     }
+
+     .Background-Card {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-image: url('/assets/icons/herocard.svg');
+         background-position: center center;
+         background-size: cover;
+         background-repeat: no-repeat;
+         z-index: 1;
+     }
+
+     .BetHeroCard-HeadingWrapper {
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         gap: 10px;
+         z-index: 3;
+
+
+         @include md {}
+
+         @include lg {}
+
+         @include xl {
+             gap: 20px;
+         }
+
+         @include xxl {
+             gap: 20px;
+         }
+
+
+         .BetHeroCard-HeadingContainer {
+             width: 100%;
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+
+             .Category {
+                 padding: 1px 8px;
+                 background: rgba(238, 238, 238, 0.5);
+                 box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
+                 border-radius: 40px;
+                 font-family: 'GilmerBold';
+                 font-style: normal;
+                 font-weight: 600;
+                 font-size: 11px;
+                 line-height: 24px;
+                 color: #FAFAFA;
+
+                 @include md {}
+
+                 @include lg {}
+
+                 @include xl {
+                     padding: 2px 10px;
+                     font-size: 12px;
+                 }
+
+                 @include xxl {
+                     padding: 3px 15px;
+                     font-size: 14px;
+                 }
+             }
+
+             .Bet-Details {
+                 display: flex;
+                 align-items: center;
+                 gap: 5px;
+
+                 .Bet-Logo {
+                     width: 30px;
+                     height: 30px;
+                 }
+
+                 .Bet-Name {
+                     color: #FAFAFA;
+                     font-family: 'GilmerMedium';
+                     font-style: normal;
+                     font-weight: 600;
+                     font-size: 14px;
+
+                     @include md {}
+
+                     @include lg {}
+
+                     @include xl {
+                         font-size: 16px;
+                     }
+
+                     @include xxl {
+                         font-size: 20px;
+                     }
+                 }
+             }
+         }
+
+         .Bet-Heading {
+
+             font-family: 'GilmerRegular';
+             font-style: normal;
+             font-weight: 700;
+             font-size: 16px;
+             line-height: 48px;
+             color: #E6E6E6;
+
+
+             @include md {}
+
+             @include lg {}
+
+             @include xl {
+                 line-height: 48px;
+                 font-size: 20px;
+             }
+
+             @include xxl {
+                 line-height: 48px;
+                 font-size: 30px;
+             }
+         }
+     }
+
+     .Predict-Btn {
+         width: fit-content;
+         background: rgba(217, 217, 217, 0.5);
+         border: 1px solid #B8B8B8;
+         box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
+         border-radius: 8px;
+         font-family: 'GilmerRegular';
+         font-style: normal;
+         font-weight: 600;
+         font-size: 12px;
+         color: #F2F2F2;
+         padding: 5px 10px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         cursor: pointer;
+         z-index: 3;
+
+         @include md {}
+
+         @include lg {}
+
+         @include xl {
+             padding: 10px 20px;
+             font-size: 14px;
+         }
+
+         @include xxl {
+             padding: 10px 20px;
+             font-size: 14px;
+         }
+
+         &:hover {
+             opacity: 0.8;
+         }
+     }
+
+     .Card-Image {
+         position: absolute;
+         bottom: -10px;
+         right: 0;
+         width: 200px;
+         height: 120px;
+
+         @include md {}
+
+         @include lg {}
+
+         @include xl {
+             width: 240px;
+             height: 135px;
+         }
+
+         @include xxl {
+             width: 340px;
+             height: 200px;
+         }
+     }
+ }
