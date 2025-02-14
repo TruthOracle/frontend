@@ -10,7 +10,7 @@ import HeaderMobile from "@/components/Header/HeaderMobile";
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode; 
 }) {
   return (
     <html lang='en'>
@@ -29,7 +29,7 @@ export default function RootLayout({
             <SnackbarProvider
               maxSnack={2}
               Components={{
-                //@ts-ignore
+                // @ts-ignore
                 custom: CustomToastWrapper,
               }}
             >
