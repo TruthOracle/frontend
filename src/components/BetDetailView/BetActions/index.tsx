@@ -16,7 +16,7 @@ import { USDC_LOGO } from "@/components/helpers/icons";
 import { useContext, useEffect, useMemo, useState } from "react";
 import { MarketContext } from "@/app/context/MarketProvider";
 import { Outcome } from "@/components/helpers/types";
-import { cairo, num } from "starknet";
+import { cairo, num, shortString } from "starknet";
 import {
   CONTRACT_ADDRESS,
   USDC_ADDRESS,
@@ -26,12 +26,15 @@ import tokenABI from "../../../abi/ERC20ABI.json";
 import { getProbabilites, getString } from "@/components/helpers/functions";
 import { enqueueSnackbar } from "notistack";
 import { usePathname, useRouter } from "next/navigation";
+import { utils } from "@/components/helpers/utils";
+import { BN } from "bn.js";
 
 interface Props {
   outcomes: Outcome[];
   betToken: string;
   moneyInPool: number;
   betPlaced: boolean;
+  marketCategory: string;
 }
 
 const BetActions: NextPage<Props> = ({
@@ -39,6 +42,7 @@ const BetActions: NextPage<Props> = ({
   betToken,
   moneyInPool,
   betPlaced,
+  marketCategory,
 }) => {
   const { address } = useAccount();
   const router = useRouter();
@@ -106,12 +110,23 @@ const BetActions: NextPage<Props> = ({
   const calls = useMemo(() => {
     if (!address || !contract || betAmount == "" || !tokenContract) return [];
 
+    const marketId = pathname.split("/").slice(-1)[0];
+    let marketType = 2;
+
+    // if (getString(marketCategory) == "Crypto Market") {
+    //   marketType = 1;
+    // } else if (getString(marketCategory) == "Sports Market") {
+    //   marketType = 0;
+    // }
+
     console.log({
-      betAmount, 
-      contract, 
-      tokenContract,
-      address,
-    });
+      CONTRACT_ADDRESS,
+      betAmount,
+      marketId,
+      marketType,
+      marketIdInt: parseInt(marketId),
+      bigint: BigInt(parseFloat(betAmount) * 1e6),
+    })
 
     return [
       tokenContract.populateTransaction["approve"]!(
@@ -119,13 +134,13 @@ const BetActions: NextPage<Props> = ({
         cairo.uint256(BigInt(parseFloat(betAmount) * 1e6))
       ),
       contract.populateTransaction["buy_shares"]!(
-        parseInt(pathname.split("/")[2]),
+        cairo.uint256(BigInt(parseInt(marketId))),
         choice,
         cairo.uint256(BigInt(parseFloat(betAmount) * 1e6)),
+        marketType,
       ),
     ];
   }, [contract, address, choice, betAmount, tokenContract]);
-
 
   const { writeAsync, data, error, isError, isSuccess, isPending } =
     useContractWrite({

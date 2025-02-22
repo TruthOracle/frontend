@@ -10,6 +10,7 @@ import abi from "../../abi/ContractABI.json";
 import { CONTRACT_ADDRESS } from "../helpers/constants";
 import { Market } from "../helpers/types";
 import { getNumber, getString } from "../helpers/functions";
+
 interface Props {}
 
 const tabList = [
@@ -45,7 +46,11 @@ const BetSection: NextPage<Props> = ({}) => {
         return;
       }
       contract.get_all_markets().then((res: any) => {
-        setMarkets(res.map((market: any) => market));
+        const all_markets = res.map((market: any) => market);
+        
+        setMarkets(all_markets);
+      }).catch((err: any) => {
+        return err;
       });
     };
     getAllMarkets();

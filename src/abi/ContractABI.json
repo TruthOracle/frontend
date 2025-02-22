@@ -79,76 +79,6 @@
     ]
   },
   {
-    "type": "enum",
-    "name": "core::option::Option::<core::integer::u8>",
-    "variants": [
-      {
-        "name": "Some",
-        "type": "core::integer::u8"
-      },
-      {
-        "name": "None",
-        "type": "()"
-      }
-    ]
-  },
-  {
-    "type": "enum",
-    "name": "core::option::Option::<core::felt252>",
-    "variants": [
-      {
-        "name": "Some",
-        "type": "core::felt252"
-      },
-      {
-        "name": "None",
-        "type": "()"
-      }
-    ]
-  },
-  {
-    "type": "enum",
-    "name": "core::option::Option::<core::integer::u128>",
-    "variants": [
-      {
-        "name": "Some",
-        "type": "core::integer::u128"
-      },
-      {
-        "name": "None",
-        "type": "()"
-      }
-    ]
-  },
-  {
-    "type": "enum",
-    "name": "core::option::Option::<core::integer::u64>",
-    "variants": [
-      {
-        "name": "Some",
-        "type": "core::integer::u64"
-      },
-      {
-        "name": "None",
-        "type": "()"
-      }
-    ]
-  },
-  {
-    "type": "enum",
-    "name": "core::option::Option::<core::bool>",
-    "variants": [
-      {
-        "name": "Some",
-        "type": "core::bool"
-      },
-      {
-        "name": "None",
-        "type": "()"
-      }
-    ]
-  },
-  {
     "type": "struct",
     "name": "truthoracle::MarketFactory::Market",
     "members": [
@@ -189,32 +119,132 @@
         "type": "core::integer::u64"
       },
       {
+        "name": "winningOutcome",
+        "type": "core::option::Option::<truthoracle::MarketFactory::Outcome>"
+      },
+      {
         "name": "moneyInPool",
         "type": "core::integer::u256"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "truthoracle::MarketFactory::CryptoMarket",
+    "members": [
+      {
+        "name": "name",
+        "type": "core::byte_array::ByteArray"
+      },
+      {
+        "name": "marketId",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "description",
+        "type": "core::byte_array::ByteArray"
+      },
+      {
+        "name": "outcomes",
+        "type": "(truthoracle::MarketFactory::Outcome, truthoracle::MarketFactory::Outcome)"
+      },
+      {
+        "name": "category",
+        "type": "core::felt252"
+      },
+      {
+        "name": "image",
+        "type": "core::byte_array::ByteArray"
+      },
+      {
+        "name": "isSettled",
+        "type": "core::bool"
+      },
+      {
+        "name": "isActive",
+        "type": "core::bool"
+      },
+      {
+        "name": "deadline",
+        "type": "core::integer::u64"
       },
       {
         "name": "winningOutcome",
         "type": "core::option::Option::<truthoracle::MarketFactory::Outcome>"
       },
       {
+        "name": "moneyInPool",
+        "type": "core::integer::u256"
+      },
+      {
         "name": "conditions",
-        "type": "core::option::Option::<core::integer::u8>"
+        "type": "core::integer::u8"
       },
       {
         "name": "priceKey",
-        "type": "core::option::Option::<core::felt252>"
+        "type": "core::felt252"
       },
       {
         "name": "amount",
-        "type": "core::option::Option::<core::integer::u128>"
+        "type": "core::integer::u128"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "truthoracle::MarketFactory::SportsMarket",
+    "members": [
+      {
+        "name": "name",
+        "type": "core::byte_array::ByteArray"
+      },
+      {
+        "name": "marketId",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "description",
+        "type": "core::byte_array::ByteArray"
+      },
+      {
+        "name": "outcomes",
+        "type": "(truthoracle::MarketFactory::Outcome, truthoracle::MarketFactory::Outcome)"
+      },
+      {
+        "name": "category",
+        "type": "core::felt252"
+      },
+      {
+        "name": "image",
+        "type": "core::byte_array::ByteArray"
+      },
+      {
+        "name": "isSettled",
+        "type": "core::bool"
+      },
+      {
+        "name": "isActive",
+        "type": "core::bool"
+      },
+      {
+        "name": "deadline",
+        "type": "core::integer::u64"
+      },
+      {
+        "name": "winningOutcome",
+        "type": "core::option::Option::<truthoracle::MarketFactory::Outcome>"
+      },
+      {
+        "name": "moneyInPool",
+        "type": "core::integer::u256"
       },
       {
         "name": "apiEventId",
-        "type": "core::option::Option::<core::integer::u64>"
+        "type": "core::integer::u64"
       },
       {
         "name": "isHome",
-        "type": "core::option::Option::<core::bool>"
+        "type": "core::bool"
       }
     ]
   },
@@ -284,46 +314,6 @@
       },
       {
         "type": "function",
-        "name": "create_sports_market",
-        "inputs": [
-          {
-            "name": "name",
-            "type": "core::byte_array::ByteArray"
-          },
-          {
-            "name": "description",
-            "type": "core::byte_array::ByteArray"
-          },
-          {
-            "name": "outcomes",
-            "type": "(core::felt252, core::felt252)"
-          },
-          {
-            "name": "category",
-            "type": "core::felt252"
-          },
-          {
-            "name": "image",
-            "type": "core::byte_array::ByteArray"
-          },
-          {
-            "name": "deadline",
-            "type": "core::integer::u64"
-          },
-          {
-            "name": "apiEventId",
-            "type": "core::integer::u64"
-          },
-          {
-            "name": "isHome",
-            "type": "core::bool"
-          }
-        ],
-        "outputs": [],
-        "state_mutability": "external"
-      },
-      {
-        "type": "function",
         "name": "create_crypto_market",
         "inputs": [
           {
@@ -355,12 +345,52 @@
             "type": "core::integer::u8"
           },
           {
-            "name": "priceKey",
+            "name": "price_key",
             "type": "core::felt252"
           },
           {
             "name": "amount",
             "type": "core::integer::u128"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "create_sports_market",
+        "inputs": [
+          {
+            "name": "name",
+            "type": "core::byte_array::ByteArray"
+          },
+          {
+            "name": "description",
+            "type": "core::byte_array::ByteArray"
+          },
+          {
+            "name": "outcomes",
+            "type": "(core::felt252, core::felt252)"
+          },
+          {
+            "name": "category",
+            "type": "core::felt252"
+          },
+          {
+            "name": "image",
+            "type": "core::byte_array::ByteArray"
+          },
+          {
+            "name": "deadline",
+            "type": "core::integer::u64"
+          },
+          {
+            "name": "api_event_id",
+            "type": "core::integer::u64"
+          },
+          {
+            "name": "is_home",
+            "type": "core::bool"
           }
         ],
         "outputs": [],
@@ -382,16 +412,20 @@
         "name": "buy_shares",
         "inputs": [
           {
-            "name": "marketId",
+            "name": "market_id",
             "type": "core::integer::u256"
           },
           {
-            "name": "tokenToMint",
+            "name": "token_to_mint",
             "type": "core::integer::u8"
           },
           {
             "name": "amount",
             "type": "core::integer::u256"
+          },
+          {
+            "name": "market_type",
+            "type": "core::integer::u8"
           }
         ],
         "outputs": [
@@ -406,11 +440,43 @@
         "name": "settle_market",
         "inputs": [
           {
-            "name": "marketId",
+            "name": "market_id",
             "type": "core::integer::u256"
           },
           {
-            "name": "winningOutcome",
+            "name": "winning_outcome",
+            "type": "core::integer::u8"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "settle_crypto_market_manually",
+        "inputs": [
+          {
+            "name": "market_id",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "winning_outcome",
+            "type": "core::integer::u8"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "settle_sports_market_manually",
+        "inputs": [
+          {
+            "name": "market_id",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "winning_outcome",
             "type": "core::integer::u8"
           }
         ],
@@ -422,11 +488,15 @@
         "name": "claim_winnings",
         "inputs": [
           {
-            "name": "marketId",
+            "name": "market_id",
             "type": "core::integer::u256"
           },
           {
-            "name": "betNum",
+            "name": "market_type",
+            "type": "core::integer::u8"
+          },
+          {
+            "name": "bet_num",
             "type": "core::integer::u8"
           }
         ],
@@ -438,7 +508,7 @@
         "name": "get_market",
         "inputs": [
           {
-            "name": "marketId",
+            "name": "market_id",
             "type": "core::integer::u256"
           }
         ],
@@ -459,6 +529,76 @@
           }
         ],
         "state_mutability": "view"
+      },
+      {
+        "type": "function",
+        "name": "get_crypto_market",
+        "inputs": [
+          {
+            "name": "market_id",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "truthoracle::MarketFactory::CryptoMarket"
+          }
+        ],
+        "state_mutability": "view"
+      },
+      {
+        "type": "function",
+        "name": "get_all_crypto_markets",
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "core::array::Array::<truthoracle::MarketFactory::CryptoMarket>"
+          }
+        ],
+        "state_mutability": "view"
+      },
+      {
+        "type": "function",
+        "name": "get_sports_market",
+        "inputs": [
+          {
+            "name": "market_id",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "truthoracle::MarketFactory::SportsMarket"
+          }
+        ],
+        "state_mutability": "view"
+      },
+      {
+        "type": "function",
+        "name": "get_all_sports_markets",
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "core::array::Array::<truthoracle::MarketFactory::SportsMarket>"
+          }
+        ],
+        "state_mutability": "view"
+      },
+      {
+        "type": "function",
+        "name": "settle_sports_market",
+        "inputs": [
+          {
+            "name": "market_id",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "winning_outcome",
+            "type": "core::integer::u8"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
       },
       {
         "type": "function",
@@ -531,8 +671,12 @@
             "type": "core::starknet::contract_address::ContractAddress"
           },
           {
-            "name": "marketId",
+            "name": "market_id",
             "type": "core::integer::u256"
+          },
+          {
+            "name": "market_type",
+            "type": "core::integer::u8"
           }
         ],
         "outputs": [
@@ -551,11 +695,15 @@
             "type": "core::starknet::contract_address::ContractAddress"
           },
           {
-            "name": "marketId",
+            "name": "market_id",
             "type": "core::integer::u256"
           },
           {
-            "name": "betNum",
+            "name": "market_type",
+            "type": "core::integer::u8"
+          },
+          {
+            "name": "bet_num",
             "type": "core::integer::u8"
           }
         ],
@@ -587,8 +735,12 @@
         "name": "toggle_market",
         "inputs": [
           {
-            "name": "marketId",
+            "name": "market_id",
             "type": "core::integer::u256"
+          },
+          {
+            "name": "market_type",
+            "type": "core::integer::u8"
           }
         ],
         "outputs": [],
@@ -599,7 +751,7 @@
         "name": "settle_crypto_market",
         "inputs": [
           {
-            "name": "marketId",
+            "name": "market_id",
             "type": "core::integer::u256"
           }
         ],
@@ -627,23 +779,32 @@
       },
       {
         "type": "function",
-        "name": "set_platform_fee",
+        "name": "get_user_crypto_markets",
         "inputs": [
           {
-            "name": "fee",
-            "type": "core::integer::u256"
+            "name": "user",
+            "type": "core::starknet::contract_address::ContractAddress"
           }
         ],
-        "outputs": [],
-        "state_mutability": "external"
+        "outputs": [
+          {
+            "type": "core::array::Array::<truthoracle::MarketFactory::CryptoMarket>"
+          }
+        ],
+        "state_mutability": "view"
       },
       {
         "type": "function",
-        "name": "get_platform_fee",
-        "inputs": [],
+        "name": "get_user_sports_markets",
+        "inputs": [
+          {
+            "name": "user",
+            "type": "core::starknet::contract_address::ContractAddress"
+          }
+        ],
         "outputs": [
           {
-            "type": "core::integer::u256"
+            "type": "core::array::Array::<truthoracle::MarketFactory::SportsMarket>"
           }
         ],
         "state_mutability": "view"
@@ -668,6 +829,18 @@
       {
         "name": "market",
         "type": "truthoracle::MarketFactory::Market",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "truthoracle::MarketFactory::MarketFactory::CryptoMarketCreated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "truthoracle::MarketFactory::CryptoMarket",
         "kind": "data"
       }
     ]
@@ -701,12 +874,90 @@
   },
   {
     "type": "event",
+    "name": "truthoracle::MarketFactory::MarketFactory::SportsShareBought",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "user",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "market",
+        "type": "truthoracle::MarketFactory::SportsMarket",
+        "kind": "data"
+      },
+      {
+        "name": "outcome",
+        "type": "truthoracle::MarketFactory::Outcome",
+        "kind": "data"
+      },
+      {
+        "name": "amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "truthoracle::MarketFactory::MarketFactory::CryptoShareBought",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "user",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "market",
+        "type": "truthoracle::MarketFactory::CryptoMarket",
+        "kind": "data"
+      },
+      {
+        "name": "outcome",
+        "type": "truthoracle::MarketFactory::Outcome",
+        "kind": "data"
+      },
+      {
+        "name": "amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
     "name": "truthoracle::MarketFactory::MarketFactory::MarketSettled",
     "kind": "struct",
     "members": [
       {
         "name": "market",
         "type": "truthoracle::MarketFactory::Market",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "truthoracle::MarketFactory::MarketFactory::SportsMarketSettled",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "truthoracle::MarketFactory::SportsMarket",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "truthoracle::MarketFactory::MarketFactory::CryptoMarketSettled",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "truthoracle::MarketFactory::CryptoMarket",
         "kind": "data"
       }
     ]
@@ -752,12 +1003,102 @@
   },
   {
     "type": "event",
+    "name": "truthoracle::MarketFactory::MarketFactory::SportsWinningsClaimed",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "user",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "market",
+        "type": "truthoracle::MarketFactory::SportsMarket",
+        "kind": "data"
+      },
+      {
+        "name": "outcome",
+        "type": "truthoracle::MarketFactory::Outcome",
+        "kind": "data"
+      },
+      {
+        "name": "amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "truthoracle::MarketFactory::MarketFactory::CryptoWinningsClaimed",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "user",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "market",
+        "type": "truthoracle::MarketFactory::CryptoMarket",
+        "kind": "data"
+      },
+      {
+        "name": "outcome",
+        "type": "truthoracle::MarketFactory::Outcome",
+        "kind": "data"
+      },
+      {
+        "name": "amount",
+        "type": "core::integer::u256",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
     "name": "truthoracle::MarketFactory::MarketFactory::Upgraded",
     "kind": "struct",
     "members": [
       {
         "name": "class_hash",
         "type": "core::starknet::class_hash::ClassHash",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "truthoracle::MarketFactory::MarketFactory::SportsMarketCreated",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "truthoracle::MarketFactory::SportsMarket",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "truthoracle::MarketFactory::MarketFactory::SportsMarketToggled",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "truthoracle::MarketFactory::SportsMarket",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "truthoracle::MarketFactory::MarketFactory::CryptoMarketToggled",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "market",
+        "type": "truthoracle::MarketFactory::CryptoMarket",
         "kind": "data"
       }
     ]
@@ -773,13 +1114,38 @@
         "kind": "nested"
       },
       {
+        "name": "CryptoMarketCreated",
+        "type": "truthoracle::MarketFactory::MarketFactory::CryptoMarketCreated",
+        "kind": "nested"
+      },
+      {
         "name": "ShareBought",
         "type": "truthoracle::MarketFactory::MarketFactory::ShareBought",
         "kind": "nested"
       },
       {
+        "name": "SportsShareBought",
+        "type": "truthoracle::MarketFactory::MarketFactory::SportsShareBought",
+        "kind": "nested"
+      },
+      {
+        "name": "CryptoShareBought",
+        "type": "truthoracle::MarketFactory::MarketFactory::CryptoShareBought",
+        "kind": "nested"
+      },
+      {
         "name": "MarketSettled",
         "type": "truthoracle::MarketFactory::MarketFactory::MarketSettled",
+        "kind": "nested"
+      },
+      {
+        "name": "SportsMarketSettled",
+        "type": "truthoracle::MarketFactory::MarketFactory::SportsMarketSettled",
+        "kind": "nested"
+      },
+      {
+        "name": "CryptoMarketSettled",
+        "type": "truthoracle::MarketFactory::MarketFactory::CryptoMarketSettled",
         "kind": "nested"
       },
       {
@@ -793,8 +1159,33 @@
         "kind": "nested"
       },
       {
+        "name": "SportsWinningsClaimed",
+        "type": "truthoracle::MarketFactory::MarketFactory::SportsWinningsClaimed",
+        "kind": "nested"
+      },
+      {
+        "name": "CryptoWinningsClaimed",
+        "type": "truthoracle::MarketFactory::MarketFactory::CryptoWinningsClaimed",
+        "kind": "nested"
+      },
+      {
         "name": "Upgraded",
         "type": "truthoracle::MarketFactory::MarketFactory::Upgraded",
+        "kind": "nested"
+      },
+      {
+        "name": "SportsMarketCreated",
+        "type": "truthoracle::MarketFactory::MarketFactory::SportsMarketCreated",
+        "kind": "nested"
+      },
+      {
+        "name": "SportsMarketToggled",
+        "type": "truthoracle::MarketFactory::MarketFactory::SportsMarketToggled",
+        "kind": "nested"
+      },
+      {
+        "name": "CryptoMarketToggled",
+        "type": "truthoracle::MarketFactory::MarketFactory::CryptoMarketToggled",
         "kind": "nested"
       }
     ]

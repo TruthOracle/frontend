@@ -85,6 +85,7 @@ const BetDetailView: NextPage = () => {
         moneyInPool={market?.moneyInPool!}
         betToken={market?.betToken!}
         outcomes={market?.outcomes!}
+        marketCategory={market?.category!}
       />
     </div>
   );
