@@ -48,7 +48,7 @@ const BetCard: NextPage<Props> = ({
 
   useEffect(() => {
     const currentTime = new Date().getTime();
-    const deadline = new Date(parseInt(duration)).getTime();
+    const deadline = new Date(parseInt(duration) * 1000).getTime();
     const timeBetween = getTimeBetween(deadline, currentTime);
     setDaysRemaining(timeBetween[0]);
     setHoursRemaining(timeBetween[1]);
