@@ -38,7 +38,7 @@ function MyBets() {
         } else {
           closedMarketsRes.push(market);
         }
-        const outcomeAndBet = await contract.get_outcome_and_bet(address, market.marketId, 2, 0);
+        const outcomeAndBet = await contract.get_outcome_and_bet(address, market.marketId, 2, 1);
         if (market.isActive) {
           openBets.push(outcomeAndBet);
         } else {
