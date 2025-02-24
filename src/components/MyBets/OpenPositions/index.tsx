@@ -26,7 +26,7 @@ function OpenPositions({ openMarkets, openBets }: Props) {
             <p className='Status'>Open</p>
             <p className='Event'>{market.name}</p>
             <p className='DatePlaced'>
-              {new Date(parseInt(market.deadline)).toString().split("GMT")[0]}
+              {new Date(parseInt(market.deadline) * 1000).toString().split("GMT")[0]}
             </p>
             <p className='BetToken StakedAmount'>
               <Image
